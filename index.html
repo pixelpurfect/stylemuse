@@ -1,16 +1,31 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StyleMuse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StyleMuse - Artistic Style Transfer</title>
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.6.0/dist/tf.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/style-transfer@latest"></script>
-  <script defer src="app.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/style-transfer@1.0.0"></script>
 </head>
-<body class="bg-gray-100 min-h-screen flex items-center justify-center">
-  <div id="root" class="w-full max-w-xl p-6 bg-white shadow-lg rounded-lg"></div>
+<body>
+  <div class="container">
+    <h1>🎨 StyleMuse</h1>
+    <p>Apply AI-powered artistic styles to your images — all in your browser.</p>
+
+    <input type="file" id="imageUpload" accept="image/*"/>
+    <canvas id="inputCanvas"></canvas>
+
+    <div class="buttons">
+      <button data-style="wave">Wave</button>
+      <button data-style="candy">Candy</button>
+      <button data-style="udnie">Udnie</button>
+    </div>
+
+    <canvas id="outputCanvas"></canvas>
+    <a id="downloadLink" class="hidden" download="styled.png">Download Stylized Image</a>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
